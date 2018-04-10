@@ -1,0 +1,39 @@
+{
+  "displayName": "Sample HTML5 Player with Adobe Video Analytics",
+  "name": "adobe-va-sample-player",
+  "version": "1.0.0",
+  "description": "Enables video playback using HTML5 video player and supports adobe analytics for video tracking.",
+  "author": {
+    "name": "adobe"
+  },
+  "dependencies": {
+    "adobe-video-analytics": "1.0.0"
+  },
+  "viewBasePath": "src/view/",
+  "actions": [
+    {
+      "displayName": "openVideo",
+      "name": "open-video",
+      "libPath": "dist/lib/actions/openVideo.js",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "viewPath": "actions/openVideo.html"
+    }
+  ],
+  "events": [
+    {
+      "displayName": "playerEvent",
+      "name": "player-event",
+      "libPath": "dist/lib/events/playerEvent.js",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "viewPath": "events/playerEvent.html"
+    }
+  ]
+}

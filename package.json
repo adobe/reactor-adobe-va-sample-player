@@ -1,0 +1,31 @@
+{
+  "name": "reactor-adobe-va-sample-player",
+  "version": "1.0.0",
+  "description": "Launch extension which enables video playback using \"HTML5 Video Tag\" and uses \"Adobe Analytics for Video\" for tracking.",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "scaffold": "reactor-scaffold",
+    "package": "reactor-packager",
+    "sandbox": "npm run build && reactor-sandbox",
+    "clean": "rimraf dist package-*.zip",
+    "lint": "eslint src/**/*.js",
+    "build:lib": "babel ./src --out-dir dist/ --copy-file --presets es2015 --ignore *.test.js --plugins=add-module-exports",
+    "build:view": "cp -a ./src/view dist/",
+    "build": "npm run clean && npm run lint && npm run build:lib && npm run build:view",
+    "watch": "watch 'npm run build' ./src"
+  },
+  "devDependencies": {
+    "@adobe/reactor-packager": "^2.6.0",
+    "@adobe/reactor-sandbox": "^8.2.1",
+    "@adobe/reactor-scaffold": "^1.1.10",
+    "@adobe/reactor-turbine": "^22.2.1",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-import": "^2.10.0",
+    "rimraf": "^2.6.2",
+    "watch": "^1.0.2"
+  }
+}
