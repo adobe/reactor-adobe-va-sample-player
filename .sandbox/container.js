@@ -43,7 +43,7 @@ module.exports = {
       modulePath: 'adobe-va-sample-player/dist/lib/events/playerEvent.js',
       settings: {
         playerId : 'videoTag1',
-        eventType : 'MediaTimeUpdate'
+        eventType : 'MediaPlay'
       }
     }],
     conditions: [],
