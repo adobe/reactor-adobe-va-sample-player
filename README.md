@@ -5,6 +5,8 @@ For more information regarding Launch, please visit our [product website](http:/
 
 For more information regarding Launch extension development, please visit our [developer documentation](http://developer.adobelaunch.com/guides/extensions/). Note the [Scaffold tool](https://www.npmjs.com/package/@adobe/reactor-scaffold) and [Extension Sandbox](https://www.npmjs.com/package/@adobe/reactor-sandbox) will be helpful in developing your own Launch extension.
 
+For more information regarding Adobe Analytics for Video, please visit our [VA developer documentation](https://marketing.adobe.com/resources/help/es_ES/sc/appmeasurement/hbvideo/) and [VA Launch extension develper documentation](https://marketing.adobe.com/resources/help/en_US/experience-cloud/launch/c_extension-va.html).
+ 
 ## Development Setup
 1. Install [node.js](https://nodejs.org/).
 2. Clone this repository.
