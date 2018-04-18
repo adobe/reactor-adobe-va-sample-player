@@ -22,11 +22,10 @@ module.exports = {
           autoplay: false,
         },
         media: {
-          type: 'video/mp4',
-          url: 'video/video.mp4',
           id: 'videoId',
-          name: 'videoName',
+          url: 'video/video.mp4',
           metadata: {
+            name: 'videoName',
             movieName: 'movieName',
             movieRating: 'movieRating'
           },

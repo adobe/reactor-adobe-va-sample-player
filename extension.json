@@ -9,7 +9,7 @@
   "dependencies": {
     "adobe-video-analytics": "1.0.0"
   },
-  "viewBasePath": "src/view/",
+  "viewBasePath": "dist/view/",
   "actions": [
     {
       "displayName": "openVideo",
@@ -20,7 +20,7 @@
         "type": "object",
         "properties": {}
       },
-      "viewPath": "actions/openVideo.html"
+      "viewPath": "openVideo.html"
     }
   ],
   "events": [
@@ -33,7 +33,7 @@
         "type": "object",
         "properties": {}
       },
-      "viewPath": "events/playerEvent.html"
+      "viewPath": "playerEvent.html"
     }
   ]
 }
