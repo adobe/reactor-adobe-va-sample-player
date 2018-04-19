@@ -6,9 +6,6 @@
   "author": {
     "name": "adobe"
   },
-  "dependencies": {
-    "adobe-video-analytics": "1.0.0"
-  },
   "viewBasePath": "dist/view/",
   "actions": [
     {
