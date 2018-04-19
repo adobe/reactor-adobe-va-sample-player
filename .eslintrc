@@ -2,17 +2,18 @@
   "plugins" : [
     "import"
   ],
-  "env" : {
-    "browser" : true,
-    "node" : true,
-    "es6" : true
-  },
+  "parser": "babel-eslint",
   "parserOptions": {
-    "sourceType": "module"
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
   },
+  "extends": "airbnb",
   "rules": {
     "camelcase": [2, {"properties": "always"}],
-    "indent": ["error", 4, {"SwitchCase": 1}],
     "semi": [2, "always"],
     "keyword-spacing": [2],
     "space-before-function-paren": [2, "never"],
@@ -20,10 +21,12 @@
     "space-infix-ops": [2, {"int32Hint": false}],
     "quotes": [1, "single", "avoid-escape"],
     "max-len": [2, 130, 4, {"ignoreUrls": true, "ignorePattern": "^(\\s*(var|let|const)\\s.+=\\s*require\\s*\\()|(^\\s*import)"}],
+    "comma-dangle": ["error", "never"],
     "eqeqeq": [2, "allow-null"],
     "strict": [2, "global"],
     "no-nested-ternary": [2],
     "no-underscore-dangle": 0,
+    "class-methods-use-this": [0],
     "no-unused-vars" : 2,
     "no-undef" : 2,
     "no-fallthrough" : 2,
@@ -32,9 +35,29 @@
     "brace-style": [2, "1tbs", { "allowSingleLine": true }],
     "consistent-this": [0, "self"],
     "spaced-comment": 0,
-    "import/no-unresolved" : 2
+    "import/no-unresolved" : 2,
+    "arrow-body-style": ["error", "as-needed"],
+    "no-script-url": 0,
+    "no-param-reassign": 0,
+    "default-case": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-named-as-default": 0,
+    "jsx-a11y/label-has-for": 0,
+    "no-plusplus": 0,
+    "prefer-const": ["error", {
+      "destructuring": "all"
+    }],
+    "react/prop-types": 0,
+    "react/jsx-no-bind": 0,
+    "react/jsx-curly-spacing": [2, "always"]
+  },
+  "env": {
+    "es6": true,
+    "jasmine": true
   },
   "globals": {
-    "turbine" : true
+    "turbine" : true, 
+    "window"  : true,
+    "document": true
   }
 }
