@@ -1,4 +1,4 @@
-# extension-adobe-sample-player
+# reactor-adobe-va-sample-player
 This is a sample Video Player extension for Adobe Launch which enables video analytics by using Adobe Analytics for Video.
 
 For more information regarding Launch, please visit our [product website](http://www.adobe.com/enterprise/cloud-platform/launch.html).
