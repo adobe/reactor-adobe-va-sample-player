@@ -110,4 +110,4 @@ const renderCheckbox = ({ input }) => (
 );
 
 export {Item, renderSelect, renderRadio, renderTextField, renderCheckbox};
-export {Row, Col, Form, FormGroup, ControlLabel, Panel};
+export {Row, Col, Form, FormGroup, ControlLabel, Panel, HelpBlock};

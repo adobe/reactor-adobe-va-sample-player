@@ -4,9 +4,9 @@ import { Field, formValueSelector, } from 'redux-form';
 
 
 import {renderCheckbox} from '../../../utils/uiComponents';
-import {Col, Form, FormGroup, ControlLabel, Panel} from '../../../utils/uiComponents';
+import {Col, Form, FormGroup, ControlLabel, Panel, HelpBlock} from '../../../utils/uiComponents';
 
-const AnalyticsSettings = ({ ...props }) => (
+const AnalyticsSettings = ({ analyticsEnabled, ...props }) => (
     <Panel>
         <Panel.Heading>
             <Panel.Title componentClass="h3">Analytics Settings</Panel.Title>
@@ -17,14 +17,31 @@ const AnalyticsSettings = ({ ...props }) => (
                 <Col componentClass={ControlLabel} xs={2}> Enable Adobe Analytics </Col>
                 <Col xs={4}>
                     <Field name='analyticsEnabled' component={renderCheckbox} />
-                </Col>
+                </Col>            
+            {
+                analyticsEnabled && 
+                <FormGroup validationState="success">
+                    <Col xs={4}>
+                        <HelpBlock>
+                            Make sure to also configure the following extensions. 
+                            <ul>
+                                <li>Experience Cloud ID Service</li> 
+                                <li> Adobe Analytics </li>
+                                <li> Adobe Analytics for Video </li>
+                            </ul>
+                        </HelpBlock>
+                    </Col>
+                </FormGroup>
+            }
             </FormGroup>
         </Form>
         </Panel.Body>
     </Panel>
 )
 
-export default connect()(AnalyticsSettings);
+export default connect(
+    state => ({ analyticsEnabled: formValueSelector('default')(state, 'analyticsEnabled')})
+)(AnalyticsSettings);
 
 export const formConfig = {
     settingsToFormValues(values, settings, meta) {
