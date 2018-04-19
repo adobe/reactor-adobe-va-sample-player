@@ -1,38 +1,37 @@
 export default class VideoPlayer {
+  constructor(dispatcher) {
+    this._dispatcher = dispatcher;
+  }
 
-    constructor(dispatcher) {
-        this._dispatcher = dispatcher;
-    }
+  open() {}
 
-    open() {}
+  destroy() {}
 
-    destroy() {}
+  play() {}
 
-    play() {}
+  pause() {}
 
-    pause() {}
+  get id() { throw new Error('Not Implemented'); }
 
-    get id() {}
+  get volume() { throw new Error('Not Implemented'); }
 
-    get volume() {}
+  set volume(level) { throw new Error('Not Implemented'); }
 
-    set volume(level) {}
+  get currentTime() { throw new Error('Not Implemented'); }
 
-    get currentTime() {}
+  set currentTime(time) { throw new Error('Not Implemented'); }
 
-    set currentTime(time) {}
+  get qosInfo() { throw new Error('Not Implemented'); }
 
-    get qosInfo() {}
+  on(type, fn, ctx) {
+    this._dispatcher.on(type, fn, ctx);
+  }
 
-    on(type, fn, ctx) {
-        this._dispatcher.on(type, fn, ctx);
-    }
+  off(type, fn, ctx) {
+    this._dispatcher.off(type, fn, ctx);
+  }
 
-    off(type, fn, ctx) {
-        this._dispatcher.off(type, fn, ctx);
-    }
-
-    trigger(event) {
-        this._dispatcher.trigger(event);
-    }
+  trigger(event) {
+    this._dispatcher.trigger(event);
+  }
 }

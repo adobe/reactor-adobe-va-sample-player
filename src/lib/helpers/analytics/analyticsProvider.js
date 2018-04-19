@@ -1,3 +1,3 @@
 export default class AnalyticsProvider {
-    destroy() {}
+  destroy() {}
 }

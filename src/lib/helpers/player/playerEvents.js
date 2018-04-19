@@ -1,8 +1,8 @@
 export default class PlayerEvent {
-    constructor(type, info = {}) {
-        this.type = type;
-        this.info = info;
-    }
+  constructor(type, info = {}) {
+    this.type = type;
+    this.info = info;
+  }
 }
 
 PlayerEvent.MediaLoadStart = 'MediaLoadStart';
