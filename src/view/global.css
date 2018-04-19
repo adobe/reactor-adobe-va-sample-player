@@ -1,15 +1,10 @@
-body {
-    padding: .75rem
+.coral-Heading {
+    line-height: 2.25rem !important
 }
 
-label {
-    font-weight: 400;
-}
-
-td,
-th {
-    text-align: left;
-    padding-bottom: .5rem
+.coral--light {
+    font-size: 1.3rem !important;
+    line-height: 1.7rem !important
 }
 
 .u-gapLeft {
@@ -42,66 +37,4 @@ th {
 
 .u-gapBottom2x {
     margin-bottom: 1rem !important
-}
-
-.u-block {
-    display: block !important
-}
-
-.u-inlineBlock {
-    display: inline-block !important
-}
-
-.u-italic {
-    font-style: italic !important
-}
-
-.u-hidden {
-    visibility: hidden !important
-}
-
-.u-noWrap {
-    white-space: nowrap !important
-}
-
-.u-floatLeft {
-    float: left !important
-}
-
-.u-clearFix {
-    zoom: 1
-}
-
-.u-clearFix:after,
-.u-clearFix:before {
-    content: "";
-    display: table
-}
-
-.u-clearFix:after {
-    clear: both
-}
-
-.coral-Heading {
-    line-height: 2.25rem !important
-}
-
-.u-buttonReset {
-    display: inline-block;
-    padding: 0;
-    font-size: inherit;
-    cursor: pointer;
-    background-color: transparent;
-    border: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    outline: none;
-    text-decoration: none
-}
-
-.u-buttonReset:focus,
-.u-buttonReset:hover {
-    text-decoration: underline
 }

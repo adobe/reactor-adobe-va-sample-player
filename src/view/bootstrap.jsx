@@ -25,9 +25,10 @@ import reducer from './reduxActions/reducer';
 import bridgeAdapter from './bridgeAdapter';
 
 module.exports = (View, formConfig, extensionBridge = window.extensionBridge, viewProps) => {
-  const finalCreateStore = compose(
-    window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
-  )(createStore);
+  /* eslint-disable no-underscore-dangle */
+  const finalCreateStore = compose(window.__REDUX_DEVTOOLS_EXTENSION__ ?
+    window.__REDUX_DEVTOOLS_EXTENSION__() :
+    f => f)(createStore);
 
   const store = finalCreateStore(reducer, {});
 
@@ -35,9 +36,7 @@ module.exports = (View, formConfig, extensionBridge = window.extensionBridge, vi
     <View { ...props } componentsWithErrors={ props.error || [] } /> :
     null);
 
-  const ReduxView = connect(
-    ({ initializedByBridge }) => ({ initializedByBridge })
-  )(ViewWrapper);
+  const ReduxView = connect(({ initializedByBridge }) => ({ initializedByBridge }))(ViewWrapper);
 
   const ReduxFormView = reduxForm({
     form: 'default',

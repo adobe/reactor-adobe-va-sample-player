@@ -16,18 +16,21 @@
 * from Adobe Systems Incorporated.
 **************************************************************************/
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import bootstrap from './bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap-theme.min.css';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import bootstrap from './bootstrap';
 import './global.css';
 
 export default (View, formConfig) => {
-  ReactDOM.render((
-    <div>
-      { bootstrap(View, formConfig) }
-    </div>
-  ), document.getElementById('content'));
+  ReactDOM.render(
+    (
+      <div>
+        { bootstrap(View, formConfig) }
+      </div>
+    ), document.getElementById('content')
+  );
 };
