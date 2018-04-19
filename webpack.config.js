@@ -50,6 +50,10 @@ module.exports = function (env) {
     plugins: plugins,
     mode: (env.production) ? 'production' : 'development',
     optimization: {
+      splitChunks: {
+        name: 'common',
+        chunks: 'all',
+      },
       minimizer: [
         new UglifyJsWebpackPlugin({
           parallel: true, // uses all cores available on given machine
