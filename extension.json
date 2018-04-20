@@ -1,12 +1,13 @@
 {
-  "displayName": "Sample HTML5 Player with Adobe Video Analytics",
+  "displayName": "Adobe Analytics for Video - Sample Player",
   "name": "adobe-va-sample-player",
   "version": "1.0.0",
-  "description": "Enables video playback using HTML5 video player and supports adobe analytics for video tracking.",
+  "description": "Adobe Analytics for Video - Sample extension which supports video playback and tracking.",
   "iconPath": "resources/icons/VA-launch-logo.svg",
   "author": {
     "name": "adobe"
   },
+  "exchange_url": "https://adobe.com",
   "viewBasePath": "dist/view/",
   "actions": [{
     "displayName": "openVideo",
