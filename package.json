@@ -8,7 +8,7 @@
   "license": "ISC",
   "scripts": {
     "scaffold": "reactor-scaffold",
-    "package": "reactor-packager",
+    "package": "npm run build && reactor-packager",
     "sandbox": "npm run build && reactor-sandbox",
     "clean": "rimraf dist package-*.zip",
     "lint": "eslint src --ext .js --ext .jsx",
@@ -20,7 +20,7 @@
     "analyze:view": "webpack --env.production --env.analyze"
   },
   "devDependencies": {
-    "@adobe/reactor-packager": "^2.6.0",
+    "@adobe/reactor-packager": "^2.6.2",
     "@adobe/reactor-sandbox": "^8.4.0",
     "@adobe/reactor-scaffold": "^1.1.10",
     "@adobe/reactor-turbine": "^25.1.0",

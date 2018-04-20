@@ -7,7 +7,7 @@
   "author": {
     "name": "adobe"
   },
-  "exchange_url": "https://adobe.com",
+  "exchangeUrl": "https://adobeexchange.com",
   "viewBasePath": "dist/view/",
   "actions": [{
     "displayName": "openVideo",
