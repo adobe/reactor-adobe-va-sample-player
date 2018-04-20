@@ -1,27 +1,18 @@
 /*************************************************************************
 * ADOBE CONFIDENTIAL
-* ___________________
-*
-*  Copyright 2016 Adobe Systems Incorporated
-*  All Rights Reserved.
-*
-* NOTICE:  All information contained herein is, and remains
-* the property of Adobe Systems Incorporated and its suppliers,
-* if any.  The intellectual and technical concepts contained
-* herein are proprietary to Adobe Systems Incorporated and its
-* suppliers and are protected by all applicable intellectual property
-* laws, including trade secret and copyright laws.
-* Dissemination of this information or reproduction of this material
-* is strictly forbidden unless prior written permission is obtained
-* from Adobe Systems Incorporated.
+* Copyright [2018] Adobe
+* All Rights Reserved.
+* NOTICE: Adobe permits you to use, modify, and distribute this file in
+* accordance with the terms of the Adobe license agreement accompanying
+* it. If you have received this file from a source other than Adobe,
+* then your use, modification, or distribution of it requires the prior
+* written permission of Adobe.
 **************************************************************************/
 
 /* eslint dot-notation: 0 */
 
 import { getFormValues, initialize, change, submit, isValid } from 'redux-form';
 import { actionCreators } from './reduxActions/bridgeAdapterActions';
-//TBD
-//import eventBus from './utils/eventBus';
 
 export default (extensionBridge, store, formConfig) => {
   extensionBridge.register({
@@ -42,6 +33,7 @@ export default (extensionBridge, store, formConfig) => {
       // Tell redux-form to initialize our form to the initialValues provided above.
       const initialValues = formConfig.settingsToFormValues({}, settings, store.getState().meta);
       store.dispatch(initialize('default', initialValues));
+
       // The view won't render until the state says that init is complete so in order to avoid
       // useless renders we want to do this as late as possible (after initializing
       // redux-form values above).
@@ -65,10 +57,6 @@ export default (extensionBridge, store, formConfig) => {
       store.dispatch(submit('default'));
 
       const valid = isValid('default')(store.getState());
-
-      //Tbd
-      //eventBus.emit('validationOccurred');
-
       return valid;
     }
   });
