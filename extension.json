@@ -3,34 +3,125 @@
   "name": "adobe-va-sample-player",
   "version": "1.0.0",
   "description": "Enables video playback using HTML5 video player and supports adobe analytics for video tracking.",
+  "iconPath": "resources/icons/VA-launch-logo.svg",
   "author": {
     "name": "adobe"
   },
   "viewBasePath": "dist/view/",
-  "actions": [
-    {
-      "displayName": "openVideo",
-      "name": "open-video",
-      "libPath": "dist/lib/actions/openVideo.js",
-      "schema": {
-        "$schema": "http://json-schema.org/draft-04/schema#",
-        "type": "object",
-        "properties": {}
+  "actions": [{
+    "displayName": "openVideo",
+    "name": "open-video",
+    "libPath": "dist/lib/actions/openVideo.js",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "definitions": {
+        "player": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "selector": {
+              "type": "string"
+            },
+            "width": {
+              "type": "string"
+            },
+            "height": {
+              "type": "string"
+            },
+            "controls": {
+              "type": "boolean"
+            },
+            "autoplay": {
+              "type": "boolean"
+            },
+            "muted": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "type",
+            "selector",
+            "width",
+            "height"
+          ]
+        },
+        "analytics": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "enabled": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        "media": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "metadata": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "id",
+            "url"
+          ]
+        }
       },
-      "viewPath": "openVideo.html"
-    }
-  ],
-  "events": [
-    {
-      "displayName": "playerEvent",
-      "name": "player-event",
-      "libPath": "dist/lib/events/playerEvent.js",
-      "schema": {
-        "$schema": "http://json-schema.org/draft-04/schema#",
-        "type": "object",
-        "properties": {}
+      "type": "object",
+      "properties": {
+        "player": {
+          "$ref": "#/definitions/player"
+        },
+        "analytics": {
+          "$ref": "#/definitions/analytics"
+        },
+        "media": {
+          "$ref": "#/definitions/media"
+        }
       },
-      "viewPath": "playerEvent.html"
-    }
-  ]
+      "required": [
+        "player",
+        "analytics",
+        "media"
+      ]
+    },
+    "viewPath": "openVideo.html"
+  }],
+  "events": [{
+    "displayName": "playerEvent",
+    "name": "player-event",
+    "libPath": "dist/lib/events/playerEvent.js",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {
+        "playerEvent": {
+          "type": "string"
+        },
+        "playerId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "playerEvent"
+      ]
+    },
+    "viewPath": "playerEvent.html"
+  }]
 }

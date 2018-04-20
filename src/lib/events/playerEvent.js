@@ -4,10 +4,10 @@ import * as PlayerStore from '../helpers/playerStore';
 const LOG_TAG = 'events/playerEvent';
 
 export default function(settings, trigger) {
-  if (!settings.eventType) {
-    Logger.error(LOG_TAG, 'No eventType passed into playerEvent.');
+  if (!settings.playerEvent) {
+    Logger.error(LOG_TAG, 'No playerEvent passed into playerEvent.');
     return;
   }
 
-  PlayerStore.registerListener(settings.eventType, settings.playerId, trigger);
+  PlayerStore.registerListener(settings.playerEvent, settings.playerId, trigger);
 }

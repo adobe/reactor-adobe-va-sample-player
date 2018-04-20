@@ -41,7 +41,7 @@ module.exports = {
     events: [{
       modulePath: 'adobe-va-sample-player/dist/lib/events/playerEvent.js',
       settings: {
-        eventType : 'MediaPlay',
+        playerEvent : 'MediaPlay',
         playerId : 'videoTag1'
         // If playerId is absent, we listens for the event from all the players created through openVideo.
       }

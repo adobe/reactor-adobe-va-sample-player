@@ -63,18 +63,18 @@ export default connect()(VideoSettings);
 export const formConfig = {
   settingsToFormValues(values, settings/*, meta*/) {
     const {
-      video = {}
+      media = {}
     } = settings;
 
     return {
       ...values,
-      videoId: video.id,
-      videoUrl: video.url,
-      videoMetadata: video.metadata
+      videoId: media.id,
+      videoUrl: media.url,
+      videoMetadata: media.metadata
     };
   },
   formValuesToSettings(settings, values) {
-    const video = {
+    const media = {
       id: values.videoId,
       url: values.videoUrl
     };
@@ -87,13 +87,13 @@ export const formConfig = {
         metadata = values.videoMetadata;
       }
       if (metadata) {
-        video.metadata = metadata;
+        media.metadata = metadata;
       }
     }
 
     return {
       ...settings,
-      video
+      media
     };
   },
   validate(errors, values) {
