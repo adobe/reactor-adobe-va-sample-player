@@ -43,7 +43,7 @@ module.exports = {
       settings: {
         playerEvent : 'MediaPlay',
         playerId : 'videoTag1'
-        // If playerId is absent, we listens for the event from all the players created through openVideo.
+        // If playerId is absent, we listen for the event from all the players created through openVideo.
       }
     }],
     conditions: [],
