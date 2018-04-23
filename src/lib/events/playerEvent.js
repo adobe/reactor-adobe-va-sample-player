@@ -16,7 +16,7 @@ const LOG_TAG = 'events/playerEvent';
 
 export default function(settings, trigger) {
   if (!settings.playerEvent) {
-    Logger.error(LOG_TAG, 'No playerEvent passed into playerEvent.');
+    Logger.error(LOG_TAG, 'No playerEvent type passed in settings.');
     return;
   }
 

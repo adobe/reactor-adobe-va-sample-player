@@ -16,23 +16,19 @@ const LOG_TAG = 'helpers/playerStore';
 const playerStore = {};
 const launchListeners = [];
 
-function attachListener(player, event) {
+function attachListener(player, listener) {
   const playerId = player.id;
-  Logger.info(LOG_TAG, `Attaching Launch event listener for event ${event.type} in player [${playerId}]`);
-  player.on(event.type, (playerEvent) => {
-    event.trigger({
+
+  if (listener.playerId && listener.playerId !== playerId) {
+    return;
+  }
+
+  Logger.info(LOG_TAG, `Attaching Launch event listener for event ${listener.type} to player [${playerId}]`);
+  player.on(listener.type, (playerEvent) => {
+    listener.trigger({
       playerId,
       playerEvent
     });
-  });
-}
-
-function attachLaunchListeners(player) {
-  const playerId = player.id;
-  launchListeners.forEach((listener) => {
-    if (!listener.playerId || listener.playerId === playerId) {
-      attachListener(player, listener);
-    }
   });
 }
 
@@ -46,7 +42,9 @@ export function registerPlayer(player) {
   playerStore[playerId] = player;
 
   Logger.info(LOG_TAG, `Attaching queued Launch player events for player [${playerId}]`);
-  attachLaunchListeners(player);
+
+  // Make sure, we iterate through all listeners and attach matching ones to this player.
+  launchListeners.forEach(listener => attachListener(player, listener));
 }
 
 export function registerListener(type, playerId, trigger) {
@@ -58,5 +56,5 @@ export function registerListener(type, playerId, trigger) {
   launchListeners.push(listener);
 
   // Make sure, we iterate through all the available players and attach this listener.
-  Object.keys(playerStore).forEach(player => attachLaunchListeners(player));
+  Object.keys(playerStore).forEach(playedId => attachListener(playerStore[playedId], listener));
 }

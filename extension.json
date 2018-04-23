@@ -5,7 +5,7 @@
   "description": "Adobe Analytics for Video - Sample extension which supports video playback and tracking.",
   "iconPath": "resources/icons/VA-launch-logo.svg",
   "author": {
-    "name": "adobe"
+    "name": "Adobe Systems"
   },
   "exchangeUrl": "https://adobeexchange.com",
   "viewBasePath": "dist/view/",
