@@ -1,6 +1,6 @@
 node_modules
 dist
 sandbox*
-package--*.zip
+package-*.zip
 
 .vscode
