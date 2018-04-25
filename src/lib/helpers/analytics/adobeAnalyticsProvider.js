@@ -86,12 +86,14 @@ export class Provider extends AnalyticsProvider {
     return getMediaHeartbeatInstance(delegate, config).then((instance) => {
       this._mediaHeartbeat = instance;
 
+      this._creatingTracker = false;
+
       // Send pending events. Mostly (trackSessionStart, trackPlay).
       this._queuedEvents.forEach((event) => {
         this._eventHandler(event);
       });
       this._queuedEvents = [];
-      this._creatingTracker = false;
+
       return instance;
     }).catch((err) => {
       Logger.warn(LOG_TAG, `Creating Video Analytics tracker failed ${err}`);
