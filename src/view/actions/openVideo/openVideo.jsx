@@ -12,9 +12,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import PlayerSettings, { formConfig as PlayerSettingsFormConfig } from './component/playerSettings';
-import AnalyticsSettings, { formConfig as AnalyticsSettingsFormConfig } from './component/analyticsSettings';
-import VideoSettings, { formConfig as VideoSettingsFormConfig } from './component/videoSettings';
+import PlayerSettings, { formConfig as PlayerSettingsFormConfig } from './components/playerSettings';
+import AnalyticsSettings, { formConfig as AnalyticsSettingsFormConfig } from './components/analyticsSettings';
+import VideoSettings, { formConfig as VideoSettingsFormConfig } from './components/videoSettings';
 
 
 const OpenVideo = () => (

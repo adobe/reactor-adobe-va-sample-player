@@ -3,7 +3,7 @@
   "name": "adobe-va-sample-player",
   "version": "1.0.0",
   "description": "Adobe Analytics for Video - Sample extension which supports video playback and tracking.",
-  "iconPath": "resources/icons/VA-launch-logo.svg",
+  "iconPath": "resources/icons/replace_own_logo.svg",
   "author": {
     "name": "Adobe Systems"
   },
