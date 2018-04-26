@@ -77,11 +77,20 @@ export const formConfig = {
       media = {}
     } = settings;
 
+    let videoMetadata = '';
+    try {
+      if (media.metadata) {
+        videoMetadata = JSON.stringify(media.metadata);
+      }
+    } catch (ex) {
+      // ex
+    }
+
     return {
       ...values,
       videoId: media.id,
       videoUrl: media.url,
-      videoMetadata: media.metadata
+      videoMetadata
     };
   },
   formValuesToSettings(settings, values) {
