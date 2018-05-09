@@ -38,7 +38,7 @@ export class Player extends VideoPlayer {
         this._parent.removeChild(this._videoTag);
       }
     } catch (ex) {
-      // Do nothing.
+      Logger.info(LOG_TAG, `Error removing Player [${this._id}] from DOM.`);
     }
 
     this._parent = null;

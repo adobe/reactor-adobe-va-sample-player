@@ -16,6 +16,14 @@ import AnalyticsProvider from './analyticsProvider';
 
 const LOG_TAG = 'helpers/analytics/adobeAnalyticsProvider';
 
+// Documentation Links
+// Adobe Analytics for Video.
+// https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/js_2.0/
+// Video Analytics Launch Extension.
+// https://docs.adobelaunch.com/extension-reference/adobe-analytics-for-video-extension
+// MediaHeartbeat reference.
+// https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html
+
 const getMediaHeartbeatInstance = turbine.getSharedModule('adobe-video-analytics', 'get-instance');
 const MediaHeartbeat = turbine.getSharedModule('adobe-video-analytics', 'media-heartbeat');
 
@@ -56,6 +64,10 @@ export class Provider extends AnalyticsProvider {
     playbackEvents.forEach((type) => {
       this._player.on(type, this._eventHandler, this);
     });
+
+    // Ad insertion is not currently supported by sample player.
+    // This would be the place to listen for ad events and call corresponding ad tracking methods.
+    // https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/js_2.0/t_vhl_track-ads_js.html
   }
 
   _removeListeners() {
@@ -89,7 +101,7 @@ export class Provider extends AnalyticsProvider {
 
       this._creatingTracker = false;
 
-      // Send pending events. Mostly (trackSessionStart, trackPlay).
+      // Handle pending player events. Mostly (trackSessionStart, trackPlay).
       this._queuedEvents.forEach((event) => {
         this._eventHandler(event);
       });
@@ -109,6 +121,8 @@ export class Provider extends AnalyticsProvider {
       return;
     }
 
+    // Queue important events as there can be a delay in creating a mediaHeartbeat instance and
+    // handle it after creating the instance.
     if (this._creatingTracker) {
       if (evt.type === PlayerEvent.MediaLoaded ||
                 evt.type === PlayerEvent.MediaPlay ||

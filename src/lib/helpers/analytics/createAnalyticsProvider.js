@@ -13,6 +13,10 @@
 import Logger from '../core/logger';
 import * as adobeAnalytics from './adobeAnalyticsProvider';
 
+// This approach allows the extension developer to support multiple analytics solutions.
+// Analytics type can be selected during action or extension configuration in launch UI and
+// passed here through settings.
+
 export default function createAnalyticsProvider(settings, player) {
   switch (settings.type) {
     case adobeAnalytics.Type:

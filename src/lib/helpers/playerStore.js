@@ -33,6 +33,8 @@ function attachListener(player, listener) {
   });
 }
 
+// Register players created with openVideo action.
+// This function makes sure we listen for any matching launch events from this player.
 export function registerPlayer(player) {
   const playerId = player.id;
   if (playerId in playerStore) {
@@ -48,6 +50,8 @@ export function registerPlayer(player) {
   launchListeners.forEach(listener => attachListener(player, listener));
 }
 
+// Register trigger for events we listen in Launch rule.
+// This function makes sure we listen for this event from any matching players.
 export function registerListener(type, playerId, trigger) {
   if (!type || !trigger) {
     return;

@@ -47,7 +47,7 @@ export default class PlayerFacade {
       Logger.warn(LOG_TAG, `Creating analytics provider failed with ${ex}`);
     }
 
-    // Other functionalities like Ad Resolution, Custom UI can be initialized here.
+    // Other functionalities and components like Ad Resolution, Custom UI can be initialized here.
 
     this._player = player;
     this._analyticsProvider = analyticsProvider;
