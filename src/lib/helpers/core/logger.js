@@ -20,7 +20,7 @@ export default class Logger {
   }
 
   static warn(tag, msg) {
-    turbine.logger.warn(`[${tag} - ${msg}`);
+    turbine.logger.warn(`[${tag}] - ${msg}`);
   }
 
   static error(tag, msg) {

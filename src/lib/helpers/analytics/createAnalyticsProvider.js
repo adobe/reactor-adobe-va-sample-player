@@ -13,6 +13,8 @@
 import Logger from '../core/logger';
 import * as adobeAnalytics from './adobeAnalyticsProvider';
 
+const LOG_TAG = 'helpers/analytics/createAnalyticsProvider';
+
 // This approach allows the extension developer to support multiple analytics solutions.
 // Analytics type can be selected during action or extension configuration in launch UI and
 // passed here through settings.
@@ -23,6 +25,6 @@ export default function createAnalyticsProvider(settings, player) {
       return new adobeAnalytics.Provider(settings, player);
   }
 
-  Logger.warn(`No matching Analytics provider for type ${settings.type}`);
+  Logger.warn(LOG_TAG, `No matching Analytics provider for type ${settings.type}`);
   return null;
 }

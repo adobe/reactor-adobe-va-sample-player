@@ -13,12 +13,14 @@
 import Logger from '../core/logger';
 import * as videoTag from './videoTagPlayer';
 
+const LOG_TAG = 'helpers/player/createVideoPlayer';
+
 export default function createVideoPlayer(settings = {}, dispatcher) {
   switch (settings.type) {
     case videoTag.Type:
       return new videoTag.Player(settings, dispatcher);
   }
 
-  Logger.warn(`No matching Player for type ${settings.type}`);
+  Logger.warn(LOG_TAG, `No matching Player for type ${settings.type}`);
   return null;
 }
