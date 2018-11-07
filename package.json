@@ -20,10 +20,10 @@
     "analyze:view": "webpack --env.production --env.analyze"
   },
   "devDependencies": {
-    "@adobe/reactor-packager": "^2.6.2",
-    "@adobe/reactor-sandbox": "^8.4.0",
+    "@adobe/reactor-packager": "^3.0.2",
+    "@adobe/reactor-sandbox": "^10.0.6",
     "@adobe/reactor-scaffold": "^1.1.10",
-    "@adobe/reactor-turbine": "^25.1.0",
+    "@adobe/reactor-turbine": "^25.2.1",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
@@ -46,7 +46,7 @@
     "watch": "^1.0.2",
     "webpack": "^4.5.0",
     "webpack-bundle-analyzer": "^2.11.1",
-    "webpack-cli": "^2.0.14",
+    "webpack-cli": "^3.1.1",
     "webpack-shell-plugin": "^0.5.0"
   },
   "dependencies": {
@@ -55,7 +55,7 @@
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.3.1",
     "react-redux": "^5.0.7",
-    "reduce-reducers": "^0.1.2",
+    "reduce-reducers": "^0.4.3",
     "redux": "^3.7.2",
     "redux-actions": "^2.3.0",
     "redux-form": "^7.3.0"
