@@ -1,4 +1,5 @@
 # reactor-adobe-va-sample-player
+
 This is a sample Video Player extension for Adobe Launch which enables video analytics by using Adobe Analytics for Video.
 
 For more information regarding Launch, please visit our [product website](http://www.adobe.com/enterprise/cloud-platform/launch.html).
@@ -8,6 +9,7 @@ For more information regarding Launch extension development, please visit our [d
 For more information regarding Adobe Analytics for Video, please visit our [VA developer documentation](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/) and [VA Launch extension develper documentation](https://docs.adobelaunch.com/extension-reference/web/adobe-analytics-for-video-extension).
 
 ## Development Setup
+
 1. Install [node.js](https://nodejs.org/).
 2. Clone this repository.
 3. After navigating into the project directory, install project dependencies by running `npm install`.
