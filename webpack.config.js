@@ -68,7 +68,7 @@ module.exports = function (env) {
     module: {
       rules: [{
         test: /\.jsx?$/,
-        include: /src\/view/,
+        include: path.resolve('src/view'),
         exclude: /__tests__/,
         loader: 'babel-loader',
         query: {
