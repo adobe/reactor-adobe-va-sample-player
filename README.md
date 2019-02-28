@@ -4,9 +4,9 @@ This is a sample Video Player extension for Adobe Launch which enables video ana
 
 For more information regarding Launch, please visit our [product website](http://www.adobe.com/enterprise/cloud-platform/launch.html).
 
-For more information regarding Launch extension development, please visit our [developer documentation](http://developer.adobelaunch.com/guides/extensions/). Note the [Scaffold tool](https://www.npmjs.com/package/@adobe/reactor-scaffold) and [Extension Sandbox](https://www.npmjs.com/package/@adobe/reactor-sandbox) will be helpful in developing your own Launch extension.
+For more information regarding Launch extension development, please visit our [developer documentation](http://developer.adobelaunch.com/extensions/). Note the [Scaffold tool](https://www.npmjs.com/package/@adobe/reactor-scaffold) and [Extension Sandbox](https://www.npmjs.com/package/@adobe/reactor-sandbox) will be helpful in developing your own Launch extension.
 
-For more information regarding Adobe Analytics for Video, please visit our [VA developer documentation](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/) and [VA Launch extension develper documentation](https://docs.adobelaunch.com/extension-reference/web/adobe-analytics-for-video-extension).
+For more information regarding Adobe Analytics for Video, please visit our [VA developer documentation](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/) and [VA Launch extension develper documentation](https://docs.adobelaunch.com/extension-reference/web/adobe-media-analytics-for-audio-and-video-extension).
 
 ## Development Setup
 
