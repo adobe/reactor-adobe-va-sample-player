@@ -1,9 +1,11 @@
 {
   "name": "adobe-va-sample-player",
   "version": "1.0.0",
-  "description": "Adobe Analytics for Video Sample Video Player Launch Extension.",
+  "description": "Adobe Analytics for Video Sample Video Player Tags Extension.",
   "author": {
-    "name": "adobe"
+    "name": "Adobe",
+    "url": "http://adobe.com",
+    "email": "reactor@adobe.com"
   },
   "license": "ISC",
   "scripts": {
